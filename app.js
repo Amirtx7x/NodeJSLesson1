@@ -1,1 +1,1 @@
-ECHO is on.
+const amir = "amir";
