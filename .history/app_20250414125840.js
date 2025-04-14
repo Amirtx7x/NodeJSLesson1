@@ -27,16 +27,17 @@ app.get('/random', (req, res) => {
 
 
 app.get('/users', (req, res) => {
-    res.json([
-        { Name: 'Amir', age: 15, Car: '50x' },
-        { Name: 'Amxxir', age: 153, Car: '5022x' },
-        { Name: 'Amxaxir', age: 15, Car: '5ss0x' }
+    res.type(json),
+        res.send([
+            { Name: 'Amir', age: 15, Car: '50x' },
+            { Name: 'Amxxir', age: 153, Car: '5022x' },
+            { Name: 'Amxaxir', age: 15, Car: '5ss0x' },
 
-    ])
+        ])
 })
 
 
-// success 
+
 
 
 

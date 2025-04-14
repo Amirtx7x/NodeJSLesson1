@@ -18,39 +18,6 @@ app.get("/date", function (req, res) {
 
 // Success
 
-
-app.get('/random', (req, res) => {
-    res.send({ number: Math.random() });
-})
-
-// half success - i missed to put parenthesis as its json 
-
-
-app.get('/users', (req, res) => {
-    res.json([
-        { Name: 'Amir', age: 15, Car: '50x' },
-        { Name: 'Amxxir', age: 153, Car: '5022x' },
-        { Name: 'Amxaxir', age: 15, Car: '5ss0x' }
-
-    ])
-})
-
-
-// success 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 app.use(express.static("public"));
 app.listen(port, () => {
     console.log(`✅ Server is running on http://localhost:${port}`);
