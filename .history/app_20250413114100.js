@@ -1,27 +1,71 @@
-const express = require("express");
+const express = require('express');
 const app = express();
 const port = 1407;
-const path = require("path");
 app.use(express.json());
-// --- modules to be used ---//
 
-// Create a get response that respond with "hello world"
-app.get("/hello", function (req, res) {
-    res.send("hello mother fuckers");
-});
+app.get('/hello', (req,res) => {
+    res.send('zobre fek')
+})
 
-// Success
+// -ok
 
-app.get("/date", function (req, res) {
+app.get('/date' , (req,res) => {
     res.send(new Date().toISOString());
-});
+})
 
-// Success
+// -ok
 
-app.use(express.static("public"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+app.use(express.static('public')); 
 app.listen(port, () => {
     console.log(`✅ Server is running on http://localhost:${port}`);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

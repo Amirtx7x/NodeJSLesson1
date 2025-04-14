@@ -1,27 +1,92 @@
-const express = require("express");
+const express = require('express');
 const app = express();
 const port = 1407;
-const path = require("path");
 app.use(express.json());
-// --- modules to be used ---//
 
-// Create a get response that respond with "hello world"
-app.get("/hello", function (req, res) {
-    res.send("hello mother fuckers");
-});
+app.get('/hello', (req,res) => {
+    res.send('zobre fek')
+})
 
-// Success
+// -ok
 
-app.get("/date", function (req, res) {
+app.get('/date' , (req,res) => {
     res.send(new Date().toISOString());
+})
+
+// -ok
+
+app.get('/random', (req,res) => {
+    console.log('message sent')
+    res.send({number: Math.random()})
+})
+
+// - ok
+
+app.get('/received' , (req,res) => {
+    res.send('Your message was received')
+})
+
+
+// - ok
+
+app.post('/json' , (req,res) =>{
+    console.log(`your json was received ${req.body}`)
+    res.send(req.body)
+})
+
+
+// - ok
+
+// 3.8 DELETE /item/:id
+app.delete('/item/:id', (req, res) => {
+    res.send(`Item ${req.params.id} deleted!`);
 });
 
-// Success
 
-app.use(express.static("public"));
+// 3.9 PUT /item/:id
+app.put('/item/:id', (req, res) => {
+    res.json({ id: req.params.id, ...req.body });
+});
+
+
+
+
+
+
+
+
+app.use(express.static('public')); 
 app.listen(port, () => {
     console.log(`✅ Server is running on http://localhost:${port}`);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

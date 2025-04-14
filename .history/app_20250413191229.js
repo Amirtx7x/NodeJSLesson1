@@ -1,27 +1,82 @@
-const express = require("express");
+const express = require('express');
 const app = express();
 const port = 1407;
-const path = require("path");
+const path = require('path');
 app.use(express.json());
-// --- modules to be used ---//
 
-// Create a get response that respond with "hello world"
-app.get("/hello", function (req, res) {
-    res.send("hello mother fuckers");
+
+
+
+//-------- send html as string , in the get requrest --------
+app.get('/hello', (req, res)=>{
+    res.send('<html><head><title>Hello</title></head>'+
+             '<body><h1>Hello World</h1></body></html>');
 });
 
-// Success
+//-------- defining a path in which we refer to a different file to show
+// here we defined a path of '/hellox' ,, in which it shows the content of index.html file --------
 
-app.get("/date", function (req, res) {
-    res.send(new Date().toISOString());
+app.get('/hellox', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/test.pdf'));
 });
 
-// Success
 
-app.use(express.static("public"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+app.use(express.static('public')); 
 app.listen(port, () => {
     console.log(`✅ Server is running on http://localhost:${port}`);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

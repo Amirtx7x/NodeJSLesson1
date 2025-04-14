@@ -1,27 +1,81 @@
-const express = require("express");
+const express = require('express');
 const app = express();
 const port = 1407;
-const path = require("path");
+const path = require('path');
 app.use(express.json());
-// --- modules to be used ---//
 
-// Create a get response that respond with "hello world"
-app.get("/hello", function (req, res) {
-    res.send("hello mother fuckers");
+
+
+
+//-------- send html as string , in the get requrest --------
+app.get('/hello', (req, res)=>{
+    res.send('<html><head><title>Hello</title></head>'+
+             '<body><h1>Hello World</h1></body></html>');
 });
 
-// Success
+//-------- send html as file using express --------
 
-app.get("/date", function (req, res) {
-    res.send(new Date().toISOString());
+app.get('/hello', (req, res) => {
+    res.sendFile(path.join(__dirname, './hello.html'));
 });
 
-// Success
 
-app.use(express.static("public"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+app.use(express.static('public')); 
 app.listen(port, () => {
     console.log(`✅ Server is running on http://localhost:${port}`);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

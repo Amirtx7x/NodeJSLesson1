@@ -1,27 +1,82 @@
-const express = require("express");
+const express = require('express');
 const app = express();
 const port = 1407;
-const path = require("path");
+const path = require('path');
 app.use(express.json());
-// --- modules to be used ---//
 
-// Create a get response that respond with "hello world"
-app.get("/hello", function (req, res) {
-    res.send("hello mother fuckers");
-});
 
-// Success
+// send get request, and show an html content
 
-app.get("/date", function (req, res) {
-    res.send(new Date().toISOString());
-});
+app.get('/htmltest', (req,res) => { 
+    console.log('html page loaded')
+    res.send('<html><head><title> fuck you </title><body><h1>zobre fek wla mnyak </h1></body></html>')
+})
 
-// Success
 
-app.use(express.static("public"));
+// path module, when accessing route, we refer to another page.
+app.get('/pathtest', function (req,res) {
+    console.log('page loaded succesfuuly for path test')
+res.sendFile(path.join(__dirname,'./public/index.html'))
+})
+
+// ./ point it means stay in the current path 
+// ../ it means go one folder up 
+// ../.. it means go 2 folders up 
+
+
+
+
+// sending information for the server as JSON
+
+app.get('/jsontestx', function (req,res) {
+    res.type('json');
+    res.send({name:"5ra 3leek", age: "500"});
+    console.log('Json sent' + res.body)
+})
+
+
+
+
+
+
+
+
+
+
+
+
+app.use(express.static('public')); 
 app.listen(port, () => {
     console.log(`✅ Server is running on http://localhost:${port}`);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

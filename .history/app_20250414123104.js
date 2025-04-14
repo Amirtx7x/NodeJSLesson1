@@ -7,20 +7,20 @@ app.use(express.json());
 
 // Create a get response that respond with "hello world"
 app.get("/hello", function (req, res) {
-    res.send("hello mother fuckers");
+  res.send("hello mother fuckers");
 });
 
 // Success
 
 app.get("/date", function (req, res) {
-    res.send(new Date().toISOString());
+  res.send(new Date().toISOString());
 });
 
 // Success
 
 app.use(express.static("public"));
 app.listen(port, () => {
-    console.log(`✅ Server is running on http://localhost:${port}`);
+  console.log(`✅ Server is running on http://localhost:${port}`);
 });
 
 

@@ -1,51 +1,4 @@
-const express = require("express");
-const app = express();
-const port = 1407;
-const path = require("path");
-app.use(express.json());
-// --- modules to be used ---//
-
-// Create a get response that respond with "hello world"
-app.get("/hello", function (req, res) {
-    res.send("hello mother fuckers");
-});
-
-// Success
-
-app.get("/date", function (req, res) {
-    res.send(new Date().toISOString());
-});
-
-// Success
-
-app.use(express.static("public"));
-app.listen(port, () => {
-    console.log(`✅ Server is running on http://localhost:${port}`);
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* const express = require('express');
+const express = require('express');
 const app = express();
 const port = 1407;
 app.use(express.json()); // Parse JSON in body
@@ -95,10 +48,7 @@ app.post('/echo' , (req,res) => {
 
 
 
-// 3.9 PUT /item/:id
-app.put('/item/:id', (req, res) => {
-    res.json({ id: req.params.id, ...req.body });
-});
+
 
 
 
@@ -127,4 +77,3 @@ app.use(express.static('public'));
 app.listen(port, () => {
     console.log(`✅ Server is running on http://localhost:${port}`);
 });
- */
